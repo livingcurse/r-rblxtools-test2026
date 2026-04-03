@@ -1,11 +1,9 @@
--- [>] Fork of Core2016 by lxte
--- [!] inspired by spec / scot.wtf's Project2016
+-- fork of Core2016 by late
 
 if (not game:IsLoaded()) then
 	game.Loaded:Wait();
 end
 
--- Services
 local CoreGui = game:GetService("CoreGui");
 local TextChatService = game:GetService("TextChatService");
 local Lighting = game:GetService("Lighting");
@@ -15,7 +13,6 @@ local StarterGui = game:GetService("StarterGui");
 local Players = game:GetService("Players");
 local Teams = game:GetService("Teams");
 
--- Variables
 local RobloxGui = CoreGui:WaitForChild("RobloxGui");
 local ExperienceChat = CoreGui:WaitForChild("ExperienceChat");
 local ExperienceChatApp = ExperienceChat:WaitForChild("appLayout");
@@ -24,11 +21,8 @@ local UnibarMenu = TopBarApp:WaitForChild("UnibarLeftFrame"):WaitForChild("Uniba
 local MenuIconHolder = TopBarApp:WaitForChild("MenuIconHolder")
 local RobloxMenu = MenuIconHolder:WaitForChild("TriggerPoint"):WaitForChild("IconHitArea");
 local ChatHolder = UnibarMenu:WaitForChild("2"):WaitForChild("3");
+local LocalPlayer = Players.LocalPlaye
 
--- Player
-local LocalPlayer = Players.LocalPlayer
-
--- Global
 local Core2016 = getgenv().Core2016
 local Configuration = getgenv().Config2016 or ({
 	OldConsole = true,
@@ -40,7 +34,6 @@ local Configuration = getgenv().Config2016 or ({
 	HideVoiceChatButton = false,
 })
 
--- Luau
 local Spawn, Wait, Defer = task.spawn, task.wait, task.defer
 local Byte, Sub, Format, Match, Find, Replace = string.byte, string.sub, string.format, string.match, string.find, string.gsub
 local Floor, Random, Clamp = math.floor, math.random, math.clamp
@@ -51,7 +44,6 @@ local Clone = (game.Clone);
 local Destroy = (game.Destroy);
 local Changed = (game.GetPropertyChangedSignal);
 
--- Functions
 local Create = function(Class: string, Properties: { [string]: any })
 	local Object = Instance.new(Class);
 
@@ -231,11 +223,9 @@ end
 
 -- this is a function because sometimes chat gets disabled and enabled using setcoreguienabled which breaks
 local SetupChat = function()
-	-- Buttons
 	local Chat = ChatHolder:WaitForChild("chat", 2);
 	local Backpack = ChatHolder:FindFirstChild("_Backpack")
 
-	-- Objects
 	local ChatDetection = ExperienceChatApp:WaitForChild("topBorder");
 	local ChatBackground = ExperienceChatApp:WaitForChild("chatInputBar"):WaitForChild("Background");
 	local ChatContainer = ChatBackground:WaitForChild("Container");
@@ -244,7 +234,6 @@ local SetupChat = function()
 	local Badges = Chat and Chat:FindFirstChild("5");
 	local ContainerPadding = TextContainer:WaitForChild("UIPadding");
 
-	-- Configuration
 	local ChatWindow = TextChatService:WaitForChild("ChatWindowConfiguration");
 	local ChatInput = TextChatService:WaitForChild("ChatInputBarConfiguration");
 	local ChatWindowMain = ExperienceChatApp:WaitForChild("chatWindow", 3);
@@ -257,20 +246,19 @@ local SetupChat = function()
 		Backpack.Position = UDim2.fromOffset(48, 0);
 	end
 
-	-- Chat Redesign
 	ChatWindow.BackgroundColor3 = Color3.fromRGB(0, 0, 0);
-	ChatWindow.BackgroundTransparency = 0.6
-	ChatWindow.TextSize = 16
+	ChatWindow.BackgroundTransparency = 0.98
+	ChatWindow.TextSize = 17.75
 	ChatWindow.TextStrokeTransparency = 0.6
-	ChatWindow.HeightScale = 0.85
-	ChatWindow.WidthScale = 1.1
+	ChatWindow.HeightScale = 0.79
+	ChatWindow.WidthScale = 1.04
 	ChatWindow.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 	ChatInput.BackgroundColor3 = Color3.fromRGB(209, 216, 221);
-	ChatInput.BackgroundTransparency = 0.82
+	ChatInput.BackgroundTransparency = 0.95
 	ChatInput.TextColor3 = Color3.fromRGB(25, 25, 25);
 	ChatInput.PlaceholderColor3 = Color3.fromRGB(36, 35, 34);
-	ChatInput.TextStrokeTransparency = 1
-	ChatInput.TextSize = 16
+	ChatInput.TextStrokeTransparency = 0.98
+	ChatInput.TextSize = 17.5
 	ChatInput.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 	ExperienceChatApp.Position = UDim2.fromOffset(0, -20);
 	ExperienceChatApp.topBorder.Image = "rbxassetid://70944149509141"
