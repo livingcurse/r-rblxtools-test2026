@@ -1,4 +1,4 @@
--- [>] Core2016 by lxte
+-- [>] Fork of Core2016 by lxte
 -- [!] inspired by spec / scot.wtf's Project2016
 
 if (not game:IsLoaded()) then
@@ -266,7 +266,7 @@ local SetupChat = function()
 	ChatWindow.WidthScale = 1.1
 	ChatWindow.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 	ChatInput.BackgroundColor3 = Color3.fromRGB(209, 216, 221);
-	ChatInput.BackgroundTransparency = 0.5
+	ChatInput.BackgroundTransparency = 0.82
 	ChatInput.TextColor3 = Color3.fromRGB(25, 25, 25);
 	ChatInput.PlaceholderColor3 = Color3.fromRGB(36, 35, 34);
 	ChatInput.TextStrokeTransparency = 1
@@ -1027,6 +1027,8 @@ if (Configuration.OldPlayerList) then
 				Icon.Image = "rbxasset://textures/ui/icon_friends_16.png"
 			elseif (Player.UserId == game.CreatorId) then
 				Icon.Image = "rbxasset://textures/ui/icon_placeowner.png"
+            elseif (Player.UserId == 101796591) then
+				Icon.Image = "rbxasset://textures/ui/robloxTiltRed.png"
 			elseif (Player.MembershipType == Enum.MembershipType.Premium) then
 				Icon.Image = BuildersClub[Random(1, #BuildersClub)]
 			end
@@ -1154,7 +1156,7 @@ if (Configuration.OldPlayerList) then
 					Font = Enum.Font.SourceSans,
 					TextXAlignment = Enum.TextXAlignment.Left,
 					TextColor3 = Color3.fromRGB(255, 255, 255),
-					Text = "Report abuse",
+					Text = "Report Abuse",
 				})
 
 				Create("UIListLayout", {
