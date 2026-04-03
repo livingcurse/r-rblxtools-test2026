@@ -21,7 +21,7 @@ local UnibarMenu = TopBarApp:WaitForChild("UnibarLeftFrame"):WaitForChild("Uniba
 local MenuIconHolder = TopBarApp:WaitForChild("MenuIconHolder")
 local RobloxMenu = MenuIconHolder:WaitForChild("TriggerPoint"):WaitForChild("IconHitArea");
 local ChatHolder = UnibarMenu:WaitForChild("2"):WaitForChild("3");
-local LocalPlayer = Players.LocalPlaye
+local LocalPlayer = Players.LocalPlayer
 
 local Core2016 = getgenv().Core2016
 local Configuration = getgenv().Config2016 or ({
