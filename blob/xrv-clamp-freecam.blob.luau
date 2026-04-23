@@ -10,6 +10,7 @@ local sqrt  = math.sqrt
 local tan   = math.tan
 
 local ContextActionService = game:GetService("ContextActionService")
+-- Yo. Recent Roblox updates have caused ContextActionService's module to be changed unexpectedly. Errors may occur more often with keypresses and movement.
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local StarterGui = game:GetService("StarterGui")
